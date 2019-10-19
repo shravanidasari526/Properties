@@ -1,0 +1,81 @@
+
+
+
+to create jar file
+cmd line prompt
+c:\customer-service>maven clean install
+it creates jar file with target folder
+
+
+To run jar file
+c:\ java-jar target\customer-service...0.jar
+
+
+docker file:
+FROM -> base image
+VOLUME
+ADD
+RUN
+
+
+
+to run docker
+docker run -it --name address-service -p 8083
+
+any running instace is known as container
+
+
+to remove our docor container
+docker rm -f
+
+
+in ec2 install softwares
+sudo yum install -y git
+sudo yum install -y maven
+mvn clean install
+mvn -version
+git clone url
+cd <project folder>
+maven clean install
+
+in tragnt folder having jar file
+cd target
+ls
+
+java -jar target/address-service... snaphoot.jar
+java -jar target/address-service... snaphoot.jar -p 8082    // if we have port override
+
+
+
+in browser to run an application
+IPV4 public IP(from ec2):8083/address/1
+http://34.212.94.106:8083/address/1
+
+
+=======================
+=>through docker application deployment
+1)sudo yum install -y docker   to install the docker
+2)sudo systemctl start docker  ---it will make the docker to start
+3)sudo setfacl -m user:ec2-user:rw /var/run/docker.sock  ---giving the permissions to the particular user 
+4)docker images
+5)docker build -t address-service .                          ----t->tag- ->it will generate a docker image
+6)docker images
+
+8)docker run -t --name address-service-container -p 8083:8083 address-service                        --to run docker
+
+8--->to run the docker and the ports specified are for intercommunication between docker and container
+9)docker ps -a     ->to list the container
+10)docker rm -f 03adssad                -->03adssad   is container id  
+
+
+
+
+same as for employee-service
+git clone employee-service
+cd employee-service
+mvn clean install 
+
+docker run -t --name address-service-container -p 8083:8083 address-service
+
+
+docker rm -f employee-service ---->to remove employee service container            
